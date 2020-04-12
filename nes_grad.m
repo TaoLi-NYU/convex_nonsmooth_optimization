@@ -15,6 +15,7 @@ y0=x0;
 while count<maxit && e>tol
     count=count+1;
     [f,g]=fun(x0);
+    %Nesterov optimal gradient update
     y1=x0-1/M*g;
     x1=(1+q)*y1-q*y0;
     f_all(count)=f;
@@ -24,5 +25,5 @@ while count<maxit && e>tol
     y0=y1;
 end
 f_all=f_all(1:count);
-g_all=gnorm_all(1:count);
+g_all=g_all(1:count);
 end

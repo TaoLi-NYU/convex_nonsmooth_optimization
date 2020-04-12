@@ -10,6 +10,7 @@ gnorm_all=zeros(maxit,1);
 while count<maxit && e>tol
     count=count+1;
     [f,g]=fun(x0);
+    % gradient descent
     x1=x0-t*g;
     f_all(count)=f;
     e=norm(g);
